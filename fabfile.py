@@ -7,3 +7,7 @@ import platform
 
 def hostname():
     print platform.node()
+
+
+def hello(name="Jack"):
+    print "Hello, %s!" % (name, )
