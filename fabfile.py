@@ -18,7 +18,7 @@ def hello(name="Jack"):
 
 from fabric.api import local
 
-def local_fabric():
-    local("mkdir /tmp/fabric")
-    local("cd /tmp/fabric && git clone https://github.com/cgoodale/IEPUG_Fabric.git")
-    local("cd /tmp/fabric/IEPUG_Fabric && ls -alhtr")
+def clone_demo(root_dir='/tmp/fabric'):
+    local("mkdir %s" % root_dir)
+    local("cd %s && git clone https://github.com/cgoodale/IEPUG_Fabric.git" % root_dir)
+    local("cd %s/IEPUG_Fabric && ls -alhtr" % root_dir)
