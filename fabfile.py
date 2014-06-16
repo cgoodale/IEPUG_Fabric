@@ -28,4 +28,9 @@ def check_demo(root_dir='/tmp/fabric'):
     local("cd %s/IEPUG_Fabric && vi fabfile.py" % root_dir)
     local("cd %s/IEPUG_Fabric && git status" % root_dir)
 
-
+def clean_demo():
+    proceed = raw_input("This will delete /tmp/fabric.  Proceed? y/n:  ")
+    if proceed.lower() == 'y':
+        local("rm -rf /tmp/fabric")
+    else:
+        print "No cleaning was done here."
